@@ -3,3 +3,4 @@ Thumbs.db
 .idea/
 .vagrant/
 node_modules/
+.env
