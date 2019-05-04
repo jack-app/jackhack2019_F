@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>新規登録 - NoteStore</title>
+</head>
+
+<body>
+  <div>
+    <div id="message"></div>
+    <input type="text" id="name" placeholder="ユーザー名"><br />
+    <input type="text" id="email" placeholder="メールアドレス"><br />
+    <input type="password" id='password' placeholder="パスワード"><br />
+    <input type="text" id="grade" placeholder="学年"><br />
+    <button id='signup'>新規登録</button><br />
+    <a href="./login.html">ログイン</a>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+  <script src="./firebase.config.js"></script>
+
+  <script type="text/javascript">
+    <!--
+    // firebaseの初期化
+    firebase.initializeApp(firebaseConfig)
+
+    // データベースの作成
+    const database = firebase.firestore()
+
+    // サインアップ
+    document.getElementById('signup').addEventListener('click', () => {
+      (async () => {
+        // EmailとPasswordを入力
+        const name = document.getElementById('name').value
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+        const grade = document.getElementById('grade').value
+
+        document.getElementById('signup').disabled = true;
+
+        // 新規登録
+        result = await firebase.auth().createUserWithEmailAndPassword(email, password)
+
+        await result.user.updateProfile({
+          displayName: name
+        })
+
+        console.log(result.user)
+        await database.collection("users").doc(result.user.uid).set({
+          grade: grade,
+        })
+
+        location.href = './index.html'
+
+      })().catch(function(error) {
+        console.log(error)
+        document.getElementById('message').innerHTML = error.message
+        document.getElementById('signup').disabled = false
+      })
+    })
+    //-->
+  </script>
+</body>
+
+</html>
