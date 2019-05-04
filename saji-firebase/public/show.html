@@ -5,13 +5,18 @@
 </head>
 
 <body>
-  <div>
-    ユーザー <span id="displayName"></span><br/>
-    メールアドレス <span id="email"></span><br/>
-    学年 <span id="grade"></span><br/>
-  </div>
 
-  <div id="notes"></div>
+  <div>
+    ユーザー <span id="displayName"></span><br />
+    メールアドレス <span id="email"></span><br />
+    学年 <span id="grade"></span><br />
+  </div>
+  <div>
+    <h1 id="noteName"></h1>
+    <p id="noteDescription"></p>
+    <span id="notePrice"></span>円<br/>
+    <button id='buy_button' disabled>購入する</button>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
@@ -37,21 +42,15 @@
           document.getElementById('email').innerHTML = user.email
           document.getElementById('grade').innerHTML = user_data.grade
 
-          const notes = await database.collection("notes").get()
+          const params = window.location.search.substring(1).split('&').reduce((r, c) => {r[c.split('=')[0]] = c.split('=')[1];return r }, {})
+          const note = (await database.collection("notes").doc(params.id).get()).data()
 
+          document.getElementById('noteName').innerHTML = note.name
+          document.getElementById('noteDescription').innerHTML = note.description
+          document.getElementById('notePrice').innerHTML = note.price
 
-          notes.forEach((note) => {
-            let id = note.id
-            note = note.data()
-          document.getElementById('notes').innerHTML += `
-            <div>
-              <h1>${ note.name }</h1>
-              <p>${ note.description}</p>
-              ${ note.price }円<br/>
-              <a href="./show.html?id=${id}">詳細ページへ</a>
-            </div>
-            `
-          })
+          document.getElementById('buy_button').disabled = false
+
 
         })().catch(function(error) {
           console.log(error)
