@@ -1,0 +1,23 @@
+{
+  "name": "jackhack2019_f",
+  "version": "1.0.0",
+  "description": "LEO",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jack-app/jackhack2019_F.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jack-app/jackhack2019_F/issues"
+  },
+  "homepage": "https://github.com/jack-app/jackhack2019_F#readme"
+}
