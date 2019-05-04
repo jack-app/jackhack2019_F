@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>NoteStore</title>
+</head>
+
+<body>
+  <div>
+    ユーザー <span id="displayName"></span><br/>
+    メールアドレス <span id="email"></span><br/>
+    学年 <span id="grade"></span><br/>
+  </div>
+
+  <div id="notes"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+  <script src="./firebase.config.js"></script>
+
+  <script type="text/javascript">
+    <!--
+    // firebaseの初期化
+    firebase.initializeApp(firebaseConfig)
+
+    const database = firebase.firestore()
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        (async () => {
+          const user = firebase.auth().currentUser;
+          const user_data = (await database.collection("users").doc(user.uid).get()).data()
+
+          document.getElementById('displayName').innerHTML = user.displayName
+          document.getElementById('email').innerHTML = user.email
+          document.getElementById('grade').innerHTML = user_data.grade
+
+          const notes = await database.collection("notes").get()
+
+
+          notes.forEach((note) => {
+            let id = note.id
+            note = note.data()
+          document.getElementById('notes').innerHTML += `
+            <div>
+              <h1>${ note.name }</h1>
+              <p>${ note.description}</p>
+              ${ note.price }円<br/>
+              <a href="./show.html?id=${id}">詳細ページへ</a>
+            </div>
+            `
+          })
+
+        })().catch(function(error) {
+          console.log(error)
+        })
+      } else {
+        location.href = './login.html'
+      }
+    });
+
+    //-->
+  </script>
+</body>
+
+</html>
