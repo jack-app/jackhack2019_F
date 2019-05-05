@@ -42,13 +42,14 @@
       <form action="mail.php" method="post">
         <dl class="clearfix"><br>
           <dt><label for="email">メールアドレス（名古屋大学のメールアドレスを入力してください）</label></dt>
-          <dd><input type="email" name="email" id="email" required></dd><br>
+          <dd><input type="text" id="email" placeholder="メールアドレス"></dd><br>
           <dt><label for="name">パスワード</label></dt>
-          <dd><input type="text" name="password" id="password" required></dd><br>
+          <dd><input type="password" id='password' placeholder="パスワード"></dd><br>
         </dl>
         <br>
 <div style="right">
-        <a class="waves-effect waves-light btn" href="product_list.html">ログイン</a>
+        <a class="waves-effect waves-light btn" href="product_list.html" id='login'>ログイン</a>
+        <a href="./signup.html">新規登録</a>
       </div>
 <br>
       </form>

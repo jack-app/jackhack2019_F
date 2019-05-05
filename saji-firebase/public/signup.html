@@ -12,22 +12,71 @@
 </head>
 
 <body>
+  <header>
+    <nav style="position: fixed; z-index:9999;top:0px;">
+      <div class="nav-wrapper">
+        <div style="position:absolute; top:8px; left:8px;">
+          <img href="#" src="UNSロゴ_絵.png" height=50px></a>
+          <img href="#" src="UNSロゴ_字.png" height=50px></a>
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="product_list.html">ホーム</a></li>
+          <li><a href="#">検索</a></li>
+          <li><a href="#">履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <div class="container">
     <article>
-      <h1>会員登録</h1>
+      <h2><br>会員登録</h2>
       <form action="mail.php" method="post">
         <div id="message"></div>
         <dl class="clearfix">
           <dt><label for="name">お名前</label><strong>（必須）</strong></dt>
-          <dd><input type="text" name="name" id="name" required></dd>
+          <dd><input type="text" name="name" id="name" required></dd><br>
           <dt><label for="name">学籍番号</label><strong>（必須）</strong></dt>
-          <dd><input type="text" name="number" id="number" required></dd>
+          <dd><input type="text" name="number" id="number" required></dd><br>
           <dt><label for="email">メールアドレス</label><strong>（名古屋大学のメールアドレスを入力してください）</strong></dt>
-          <dd><input type="email" name="email" id="email" required></dd>
+          <dd><input type="email" name="email" id="email" required></dd><br>
           <dt><label for="email">パスワード</label></dt>
-          <dd><input type="password" name="password" id="password" required></dd>
+          <dd><input type="password" name="password" id="password" required></dd><br>
           <dt><label for="email">学年</label></dt>
-          <dd><input type="text" id="grade" placeholder="学年"></dd>
+          <dd><input type="text" id="grade" placeholder="学年"></dd><br>
+          <dt>あなたの学部は</dt>
+          <dd>
+
+
+
+
+             <select class="browser-default">
+               <option value="" disabled selected>---</option>
+               <option value="1">文学部</option>
+               <option value="2">教育学部</option>
+               <option value="3">経済学部経済学科</option>
+               <option value="4">経済学部経済学科</option>
+               <option value="5">情報学部自然情報学科</option>
+               <option value="6">情報学部人間社会情報学科</option>
+               <option value="7">情報学部コンピューター学科</option>
+               <option value="8">理学部数理学科</option>
+               <option value="9">理学部物理学科</option>
+               <option value="10">理学部化学科</option>
+               <option value="11">理学部生命理学科</option>
+               <option value="12">理学部地球惑星科学科</option>
+               <option value="13">医学部医学科</option>
+               <option value="14">医学部保健科</option>
+               <option value="15">工学部化学生命工学科</option>
+               <option value="16">工学部物理工学科</option>
+               <option value="17">工学部マテリアル工学科</option>
+               <option value="18">工学部電気電子情報工学科</option>
+               <option value="19">工学部機械・航空宇宙工学科</option>
+               <option value="20">工学部エネルギー理工学科</option>
+               <option value="21">工学部環境土木・建築学科</option>
+               <option value="22">農学部生物環境科学科</option>
+               <option value="23">農学部資源生物化学科</option>
+               <option value="24">農学部応用生命科学学科</option>
+             </select>
+
           <!--<dt>あなたの学部は</dt>
           <dd>
             <label><input type="radio" value="literature" name="questionnaire">文学部</label><br>
@@ -57,11 +106,22 @@
           </dd>
           //-->
         </dl>
+        <br>
         <a class="waves-effect waves-light btn" href="javscript: void(0)" id="signup">登録</a>
         <a href="./login.html">ログイン</a>
       </form>
     </article>
   </div>
+
+      <footer class="page-footer ">
+
+        <a class="white-text">© 2019 Used Note Store</a>
+        <a class="white-text right" href="product_list.html">page top</a>
+
+
+      </footer>
+
+
 
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
