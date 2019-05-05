@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lant="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>ログイン</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav style="position: fixed; z-index:9999;top:0px;">
+      <div class="nav-wrapper">
+        <div style="position:absolute; top:8px; left:8px;">
+          <img href="#" src="UNSロゴ_絵.png" height=50px></a>
+          <img href="#" src="UNSロゴ_字.png" height=50px></a>
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="product_list.html">ホーム</a></li>
+          <li><a href="#">検索</a></li>
+          <li><a href="#">履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <div class="container">
+  <main>
+    <article>
+      <h2><br>ログイン</h2>
+      <form action="mail.php" method="post">
+        <dl class="clearfix"><br>
+          <dt><label for="email">メールアドレス（名古屋大学のメールアドレスを入力してください）</label></dt>
+          <dd><input type="email" name="email" id="email" required></dd><br>
+          <dt><label for="name">パスワード</label></dt>
+          <dd><input type="text" name="password" id="password" required></dd><br>
+        </dl>
+        <br>
+<div style="right">
+        <a class="waves-effect waves-light btn" href="product_list.html">ログイン</a>
+      </div>
+<br>
+      </form>
+    </article>
+</div>
+
+
+    <footer class="page-footer ">
+
+      <a class="white-text">© 2019 Used Note Store</a>
+      <a class="white-text right" href="product_list.html">page top</a>
+
+
+    </footer>
+
+
+  </main>
+
+</body>
+
+</html>
