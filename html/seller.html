@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+<body>
+
+
+  <nav style="position: fixed; z-index:9999;top:0px;">
+    <div class="nav-wrapper">
+      <div style="position:absolute; top:8px; left:8px;">
+        <img href="#" src="UNSロゴ_絵.png" height=50px></a>
+        <img href="#" src="UNSロゴ_字.png" height=50px></a>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="product_list.html">ホーム</a></li>
+        <li><a href="#">検索</a></li>
+        <li><a href="#">履歴</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+
+<h1><br>出品者用入力フォーム</h1>
+
+
+<div class="row">
+   <form class="col s12">
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="授業名" id="授業名" type="text" class="validate">
+       </div>
+     </div>
+   </form>
+ </div>
+
+ <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="教授名" id="教授名" type="text" class="validate">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+     <form class="col s12">
+       <div class="row">
+         <div class="input-field col s6">
+           <input placeholder="商品名" id="商品名" type="text" class="validate">
+         </div>
+       </div>
+     </form>
+   </div>
+
+   <div class="row">
+       <form class="col s12">
+         <div class="row">
+           <div class="input-field col s12">
+             <textarea placeholder="商品説明" id="textarea1" class="materialize-textarea"></textarea>
+             <label for="textarea1"></label>
+           </div>
+         </div>
+       </form>
+     </div>
+
+     <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="価格" id="価格" type="text" class="validate">
+            </div>
+          </div>
+        </form>
+      </div>
+
+　<div class="row">
+  <select class="browser-default">
+    <option value="" disabled selected>---</option>
+     <option value="" disabled selected>評定選択</option>
+     <option value="1">S</option>
+     <option value="2">A</option>
+     <option value="3">B</option>
+     <option value="4">C</option>
+     <option value="5">F</option>
+   </select>
+   <label></label>
+ </div>
+
+
+ <select class="browser-default"><br><br><br>
+   <option value="" disabled selected>学部学科選択</option>
+   <option value="1">文学部</option>
+   <option value="2">教育学部</option>
+   <option value="3">経済学部経済学科</option>
+   <option value="4">経済学部経済学科</option>
+   <option value="5">情報学部自然情報学科</option>
+   <option value="6">情報学部人間社会情報学科</option>
+   <option value="7">情報学部コンピューター学科</option>
+   <option value="8">理学部数理学科</option>
+   <option value="9">理学部物理学科</option>
+   <option value="10">理学部化学科</option>
+   <option value="11">理学部生命理学科</option>
+   <option value="12">理学部地球惑星科学科</option>
+   <option value="13">医学部医学科</option>
+   <option value="14">医学部保健科</option>
+   <option value="15">工学部化学生命工学科</option>
+   <option value="16">工学部物理工学科</option>
+   <option value="17">工学部マテリアル工学科</option>
+   <option value="18">工学部電気電子情報工学科</option>
+   <option value="19">工学部機械・航空宇宙工学科</option>
+   <option value="20">工学部エネルギー理工学科</option>
+   <option value="21">工学部環境土木・建築学科</option>
+   <option value="22">農学部生物環境科学科</option>
+   <option value="23">農学部資源生物化学科</option>
+   <option value="24">農学部応用生命科学学科</option>
+ </select>
+
+
+
+
+     <form action="#"><br>
+   <div class="file-field input-field">
+     <div class="btn">
+       <span>File</span>
+       <input type="file" multiple>
+     </div>
+     <div class="file-path-wrapper">
+       <input class="file-path validate" type="text" placeholder="商品説明画像">
+     </div>
+   </div>
+ </form>
+
+ <form action="#">
+<div class="file-field input-field">
+ <div class="btn">
+   <span>File</span>
+   <input type="file" multiple>
+ </div>
+ <div class="file-path-wrapper">
+   <input class="file-path validate" type="text" placeholder="商品データ">
+ </div>
+</div>
+</form>
+
+
+</div>
+
+<footer class="page-footer ">
+  <a class="white-text">© 2019 Used Note Store</a>
+  <a class="white-text right" href="product_list.html"></a>
+</footer>
+
+</body>
