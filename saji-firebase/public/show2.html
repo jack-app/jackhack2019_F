@@ -92,10 +92,8 @@
             <h2> </h2>
           </div>
           <div class="col s6 m3 center">
-            <form action="https://us-central1-jackhack-2019.cloudfunctions.net/helloWorld" method="post">
-              <script src="https://checkout.pay.jp/" class="payjp-button" data-key="pk_test_16cde9c8b960917671d776cb"></script>
-              <input type="hidden" value="" name="note_id" id="node_id">
-            </form>
+            <h3>購入済み</h3>
+            <a href="https://firebasestorage.googleapis.com/v0/b/jackhack-2019.appspot.com/o/notes%2F99iFoIRtD80uJGR65p2P%2Fsample.jpg?alt=media&token=3b4a7186-67fa-4771-a0cd-643df8fed643" class='waves-effect waves-light btn' target='brank'>ダウンロード!</a>
           </div>
         </div>
       </div>
@@ -106,11 +104,13 @@
           <div class="card">
             <div class="card-content">
               <span class="card-title"></span>
-              <p id="noteDescription"></p>
+              <p id="noteDescription">焼き肉を無料にしたい一心で全力で講義ノートを取りました。見やすくする為に大きめに書いたため少々ページ数が増えています。</p>
             </div>
           </div>
         </div>
       </div>
+
+
 
     </main>
     <!-- Compiled and minified JavaScript -->
@@ -173,7 +173,6 @@
             r[c.split('=')[0]] = c.split('=')[1];
             return r
           }, {})
-          document.getElementById('node_id').value = params.id
           const note = (await database.collection("notes").doc(params.id).get()).data()
 
           document.getElementById('noteName').innerHTML = note.name

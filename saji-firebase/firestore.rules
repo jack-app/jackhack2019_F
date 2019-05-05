@@ -1,0 +1,10 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{user} {
+      allow read, write;
+    }
+    match /notes/{note} {
+      allow read, write;
+    }
+  }
+}

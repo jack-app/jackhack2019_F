@@ -4,5 +4,6 @@ const functions = require('firebase-functions')
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 exports.helloWorld = functions.https.onRequest((request, response) => {
-  res.redirect('https://jackhack-2019.firebaseapp.com/show2.html')
+  // response.send(request.body)
+  response.redirect('https://jackhack-2019.firebaseapp.com/show2.html?id='+request.body.note_id)
 })
