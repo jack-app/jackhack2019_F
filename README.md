@@ -1,2 +1,2 @@
-# jackhack2019F
-LEO
+# Free AI at api.airforce
+https://discord.gg/AJDsM7jtbq
